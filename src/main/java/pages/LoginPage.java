@@ -21,11 +21,6 @@ public class LoginPage extends BasePage {
 		setLoginWithEmailButton();
 	}
 
-	public void initializeEmailAndPasswordInputs() {
-		enterEmail();
-		enterPassword();
-	}
-
 	public void setLoginWithEmailButton() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//MainMenuUI/Canvas/Content/LoginMethodsScreen/Social buttons/Login Email").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
@@ -64,13 +59,6 @@ public class LoginPage extends BasePage {
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
 		this.playButton = getDriver().waitForObject(params);
 	}
-	public void tapEmailInput(){
-		inputEmailLoginTab.tap();
-	}
-
-	public void tapPasswordInput(){
-		inputPasswordLoginTab.tap();
-	}
 
 	public void tapPlayButton(){
 		playButton.tap();
@@ -78,7 +66,6 @@ public class LoginPage extends BasePage {
 	public void pressLoginButton(){
 		loginButton.tap();
 	}
-
 	public void pressLoginWithEmailButton(){
 		loginWithEmailButton.tap();
 	}
