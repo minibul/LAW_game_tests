@@ -6,6 +6,10 @@ import com.alttester.Commands.FindObject.AltFindObjectsParams;
 import com.alttester.Commands.FindObject.AltWaitForObjectsParams;
 import com.alttester.Commands.ObjectCommand.AltSetTextParams;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 public class LoginPage extends BasePage {
 
 	public static AltObject loginWithEmailButton;
@@ -19,6 +23,17 @@ public class LoginPage extends BasePage {
 		super(driver);
 		this.driver = driver;
 		setLoginWithEmailButton();
+	}
+
+	private static String getProperty(String key) {
+		Properties properties = new Properties();
+		try {
+			FileInputStream fis = new FileInputStream("src/main/resources/config.properties");
+			properties.load(fis);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return properties.getProperty(key);
 	}
 
 	public void setLoginWithEmailButton() {
@@ -38,14 +53,14 @@ public class LoginPage extends BasePage {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//MainMenuUI/Canvas/Content/AccountScreen/LoginContent/Input container E-mail/Input").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
 		this.inputEmailLoginTab = driver.waitForObject(params);
-		inputEmailLoginTab.setText(new AltSetTextParams.Builder("anton.bondarev@sabregames.com").build());
+		inputEmailLoginTab.setText(new AltSetTextParams.Builder(getProperty("email")).build());
 	}
 
 	public void enterPassword() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//MainMenuUI/Canvas/Content/AccountScreen/LoginContent/Input container Password/Input").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
 		this.inputPasswordLoginTab = driver.waitForObject(params);
-		inputPasswordLoginTab.setText(new AltSetTextParams.Builder("Buldog211").build());
+		inputPasswordLoginTab.setText(new AltSetTextParams.Builder(getProperty("password")).build());
 	}
 
 	public void setLoginButton() {
