@@ -2,8 +2,8 @@ package pages;
 
 import com.alttester.AltDriver;
 
-public class BasePage {
-	private AltDriver driver;
+public abstract class BasePage {
+	protected AltDriver driver;
 
 	public BasePage(AltDriver driver) {
 		this.driver = driver;
@@ -13,7 +13,4 @@ public class BasePage {
 		return driver;
 	}
 
-	public void setDriver(AltDriver driver) {
-		this.driver = driver;
-	}
 }
