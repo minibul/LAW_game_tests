@@ -1,36 +1,16 @@
-import com.alttester.AltDriver;
-import org.junit.*;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import pages.CityPage;
-import pages.LoginPage;
 
-import java.io.IOException;
-
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginInTest {
-
-	private static AltDriver driver;
-	private static LoginPage loginPage;
-	private static CityPage cityPage;
-
-	@BeforeClass
-	public static void setUp() throws IOException {
-		driver = new AltDriver();
-		cityPage = new CityPage(driver);
-		loginPage = new LoginPage(driver);
-
-	}
-
-	@AfterClass
-	public static void tearDown() throws Exception {
-		driver.stop();
-		Thread.sleep(3000);
-	}
-
+public class LoginInTest extends BaseTest {
 
 	@Test
-	public void test_1_SuccessfulLoggedInTest() throws InterruptedException {
+	public void test_1_SuccessfulLogInTest() throws InterruptedException {
 		loginPage.pressLoginWithEmailButton();
 		loginPage.enterEmail();
 		loginPage.enterPassword();
@@ -45,19 +25,25 @@ public class LoginInTest {
 		cityPage = new CityPage(driver);
 		assertTrue(cityPage.isMailboxDisplayed());
 	}
-
-
 	@Test
-	public void test_2_SuccessfulLoggedOutTest() throws InterruptedException {
+	public void test_2_SuccessfulLogOutTest() throws InterruptedException {
 		cityPage.setSettingsButton();
 		cityPage.tapSettingsButton();
 		cityPage.setLogOutButton();
-
-		Thread.sleep(1000);
-
 		cityPage.tapLogOutButton();
 
 		assertTrue(loginPage.isEmailDisplayed());
 	}
+	@Test
+	public void unsuccessfulLogInNotRegisteredUserTest() {
 
+		loginPage.setLoginWithEmailButton();
+		loginPage.pressLoginWithEmailButton();
+		loginPage.enterRandomEmail();
+		loginPage.enterRandomPassword();
+		loginPage.setLoginButton();
+		loginPage.pressLoginButton();
+
+		assertFalse(loginPage.isEmailDisplayed());
+	}
 }
