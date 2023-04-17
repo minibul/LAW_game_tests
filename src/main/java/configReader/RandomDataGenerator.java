@@ -2,7 +2,6 @@ package configReader;
 
 import com.alttester.AltDriver;
 import pages.BasePage;
-
 import java.util.Random;
 
 public class RandomDataGenerator extends BasePage {
