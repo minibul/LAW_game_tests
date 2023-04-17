@@ -7,7 +7,7 @@ import com.alttester.Commands.FindObject.AltWaitForObjectsParams;
 
 public class CityPage extends BasePage {
 
-	private AltDriver driver;
+	private final AltDriver driver;
 	private AltObject settingsButton;
 	private AltObject logOutButton;
 

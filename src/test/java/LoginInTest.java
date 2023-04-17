@@ -1,3 +1,4 @@
+import configReader.RandomDataGenerator;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -5,17 +6,21 @@ import pages.CityPage;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static pages.LoginPage.getProperty;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginInTest extends BaseTest {
 
 	@Test
 	public void test_1_SuccessfulLogInTest() throws InterruptedException {
-		loginPage.pressLoginWithEmailButton();
-		loginPage.enterEmail();
-		loginPage.enterPassword();
+		String email = getProperty("email");
+		String password = getProperty("password");
+
+		loginPage.tapLoginWithEmailButton();
+		loginPage.enterEmailLoginTab(email);
+		loginPage.enterPasswordLoginTab(password);
 		loginPage.setLoginButton();
-		loginPage.pressLoginButton();
+		loginPage.tapLoginButton();
 		loginPage.setPlayButton();
 
 		Thread.sleep(1000);
@@ -35,15 +40,29 @@ public class LoginInTest extends BaseTest {
 		assertTrue(loginPage.isEmailDisplayed());
 	}
 	@Test
-	public void unsuccessfulLogInNotRegisteredUserTest() {
+	public void test_3_unsuccessfulLogInNotRegisteredUserTest() {
+		String randomEmail = RandomDataGenerator.generateRandomEmail("example.com", 10);
+		String randomPassword = RandomDataGenerator.generateRandomPassword(8);
 
 		loginPage.setLoginWithEmailButton();
-		loginPage.pressLoginWithEmailButton();
-		loginPage.enterRandomEmail();
-		loginPage.enterRandomPassword();
+		loginPage.tapLoginWithEmailButton();
+		loginPage.enterEmailLoginTab(randomEmail);
+		loginPage.enterPasswordLoginTab(randomPassword);
 		loginPage.setLoginButton();
-		loginPage.pressLoginButton();
+		loginPage.tapLoginButton();
 
 		assertFalse(loginPage.isEmailDisplayed());
+
+	}
+
+	@Test
+	public void test_4_cleanEmailPasswordInput() {
+
+		loginPage.tapLoginWithEmailButton();
+		loginPage.enterEmailLoginTab("");
+		loginPage.enterPasswordLoginTab("");
+		loginPage.setBackButton();
+		loginPage.tapBackButton();
+
 	}
 }
