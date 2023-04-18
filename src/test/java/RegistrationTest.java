@@ -7,7 +7,7 @@ import org.junit.runners.MethodSorters;
 public class RegistrationTest extends BaseTest {
 
 	@Test
-	public void test_1_successfulRegistrationTest() throws InterruptedException {
+	public void test_1_successfulRegistration() throws InterruptedException {
 		String randomLogin = RandomDataGenerator.generateRandomLogin(3,16);
 		String randomEmail = RandomDataGenerator.generateRandomEmail("example.com", 10);
 		String randomPassword = RandomDataGenerator.generateRandomPassword(8);

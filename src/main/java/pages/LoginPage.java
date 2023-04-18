@@ -22,6 +22,7 @@ public class LoginPage extends BasePage {
 	private AltObject registrationButton;
 	private AltObject registerButton;
 	private AltObject logoutButton;
+	private AltObject confirmButton;
 
 	public LoginPage(AltDriver driver) {
 		super(driver);
@@ -96,6 +97,13 @@ public class LoginPage extends BasePage {
 		this.registrationButton = getDriver().waitForObject(params);
 	}
 
+	public void setConfirmButton() {
+		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//MainMenuUI/Canvas/UI - Popup - Select Alliance(Clone)/Group/Content/Content/Confirm button").build();
+		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
+		this.confirmButton = getDriver().waitForObject(params);
+	}
+
+
 	public void enterNicknameRegistrationTab(String password) {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//MainMenuUI/Canvas/Content/AccountScreen/RegistrationContent/Input container Nickname/Input").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
@@ -153,6 +161,9 @@ public class LoginPage extends BasePage {
 	}
 	public void tapRegisterButton(){
 		registerButton.tap();
+	}
+	public void tapConfirmButton(){
+		confirmButton.tap();
 	}
 	public void tapLogoutButton(){
 		logoutButton.tap();
