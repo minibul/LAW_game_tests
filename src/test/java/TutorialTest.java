@@ -1,223 +1,3 @@
-//import configReader.RandomDataGenerator;
-//import org.junit.Test;
-//import pages.CityPage;
-//import pages.TutorialPage;
-//
-//public class TutorialTest extends BaseTest {
-//
-//
-//	@Test
-//	public void test_1_successfulCompletionOfTutorial()throws InterruptedException {
-////	registration new user
-//		String randomLogin = RandomDataGenerator.generateRandomLogin(3, 16);
-//		String randomEmail = RandomDataGenerator.generateRandomEmail("example.com", 10);
-//		String randomPassword = RandomDataGenerator.generateRandomPassword(8);
-//
-//		loginPage.setLoginWithEmailButton();
-//		loginPage.tapLoginWithEmailButton();
-//		loginPage.setRegistrationButton();
-//
-//		Thread.sleep(1000);
-//
-//		loginPage.tapRegistrationButton();
-//		loginPage.enterNicknameRegistrationTab(randomLogin);
-//		loginPage.enterEmailRegistrationTab(randomEmail);
-//		loginPage.enterPasswordRegistrationTab(randomPassword);
-//		loginPage.enterRepeatPasswordRegistrationTab(randomPassword);
-//		loginPage.setRegisterButton();
-//		loginPage.tapRegisterButton();
-//		loginPage.setPlayButton();
-//
-//		Thread.sleep(1000);
-//
-//		loginPage.tapPlayButton();
-//		loginPage.setConfirmButton();
-//		loginPage.tapConfirmButton();
-//
-////	start tutorial
-//		tutorialPage = new TutorialPage(driver);
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-//		cityPage = new CityPage(driver);
-//		cityPage.setChooseArmy();
-//
-//		Thread.sleep(5000);
-//
-//		cityPage.tapChooseArmy();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-////  go to castle
-//		cityPage.setGoToCastleLevel1();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapGoToCastleLevel1();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-//		cityPage.setChangeArmyRangeButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapChangeArmyRangeButton();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-////  castle defense
-//		cityPage.setChangeArmyAggressionButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapChangeArmyAggressionButton();
-//		cityPage.tapChangeArmyRangeButton();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-////  castle capture
-//		cityPage.setCastleLevel1();
-//
-//		Thread.sleep(3000);
-//
-//		cityPage.tapCastleLevel1();
-//		cityPage.setCaptureCastleButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapCaptureCastle();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-//		cityPage.setActionBar();
-//		cityPage.tapActionBar();
-//
-//		Thread.sleep(2000);
-//
-//		cityPage.setActionBar();
-//		cityPage.tapActionBar();
-////  second part of tutorial
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-////	build stone quarry
-//		cityPage.setTutorialBuilding();
-//
-//		Thread.sleep(5000);
-//
-//		cityPage.tapTutorialBuilding();
-//
-//		cityPage.setConstructBuildingButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapConstructBuildingButton();
-//		cityPage.setConstructUpgradeButtonInPopUp();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapConstructUpgradeButtonInPopUp();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-//		cityPage.setTutorialBuilding();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapTutorialBuilding();
-//		cityPage.setBuildingUpgradeFinishButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapBuildingUpgradeFinishButton();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-////	construct iron mine
-//		cityPage.setTutorialBuilding();
-//
-//		Thread.sleep(5000);
-//
-//		cityPage.tapTutorialBuilding();
-//		cityPage.setConstructBuildingButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapConstructBuildingButton();
-//		cityPage.setConstructUpgradeButtonInPopUp();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapConstructUpgradeButtonInPopUp();
-//		cityPage.setFinishBuildingIronMineInTutorial();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapFinishBuildingIronMineInTutorial();
-//		cityPage.setBuildingUpgradeFinishButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapBuildingUpgradeFinishButton();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-//		cityPage.setBuildButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapBuildButton();
-//
-//// build lumber mill
-//
-//		cityPage.setBuildBuildingButtonFromTutorialPositionTwo();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapBuildBuildingButtonFromTutorialPositionTwo();
-//		cityPage.setSelectionButtonYes();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapSelectionButtonYes();
-//		cityPage.setTutorialBuilding();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapTutorialBuilding();
-//		cityPage.setBuildingUpgradeFinishButton();
-//
-//		Thread.sleep(1000);
-//
-//		cityPage.tapBuildingUpgradeFinishButton();
-//
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//		tutorialPage.setTutorialBanner();
-//		tutorialPage.tapTutorialBanner();
-//
-//	}
-//}
-
 import configReader.RandomDataGenerator;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -225,12 +5,13 @@ import org.junit.runners.MethodSorters;
 import pages.CityPage;
 import pages.LoginPage;
 import pages.TutorialPage;
+import pages.WorldMapPage;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TutorialTest extends BaseTest {
 
 	@Test
-	public void test_01_successfulCompletionOfTutorial() throws InterruptedException {
+	public void test_01_registrationNewUser() throws InterruptedException {
 
 		loginPage = new LoginPage(driver);
 		String randomLogin = RandomDataGenerator.generateRandomLogin(3, 16);
@@ -297,6 +78,7 @@ public class TutorialTest extends BaseTest {
 
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
+
 	}
 
 	@Test
@@ -312,6 +94,7 @@ public class TutorialTest extends BaseTest {
 
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
+
 	}
 
 	@Test
@@ -354,10 +137,11 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.setActionBar();
 		cityPage.tapActionBar();
+
 	}
 
 	@Test
-	public void test_06_secondPartOfTutorial() throws InterruptedException {
+	public void test_06_secondPartOfTutorial() {
 		tutorialPage = new TutorialPage(driver);
 
 		tutorialPage.setTutorialBanner();
@@ -366,6 +150,7 @@ public class TutorialTest extends BaseTest {
 		tutorialPage.tapTutorialBanner();
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
+
 	}
 
 	@Test
@@ -406,6 +191,7 @@ public class TutorialTest extends BaseTest {
 
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
+
 	}
 
 	@Test
@@ -445,7 +231,6 @@ public class TutorialTest extends BaseTest {
 		tutorialPage.tapTutorialBanner();
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
-
 
 	}
 
@@ -569,7 +354,7 @@ public class TutorialTest extends BaseTest {
 	}
 
 	@Test
-	public void test_12_UpdateCastle() throws InterruptedException {
+	public void test_12_updateCastle() throws InterruptedException {
 		tutorialPage = new TutorialPage(driver);
 		cityPage = new CityPage(driver);
 
@@ -619,12 +404,11 @@ public class TutorialTest extends BaseTest {
 		Thread.sleep(1000);
 
 		cityPage.tapBuildButton();
-
-		cityPage.setBuildBuildingButtonFromTutorialPositionTwo();
+		cityPage.setBuildBuildingButtonFromTutorialPositionZero();
 
 		Thread.sleep(2000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionTwo();
+		cityPage.tapBuildBuildingButtonFromTutorialPositionZero();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
@@ -657,11 +441,11 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.tapBuildButton();
 
-		cityPage.setBuildBuildingButtonFromTutorialPositionTwo();
+		cityPage.setBuildBuildingButtonFromTutorialPositionThree();
 
 		Thread.sleep(5000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionTwo();
+		cityPage.tapBuildBuildingButtonFromTutorialPositionThree();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
@@ -699,11 +483,11 @@ public class TutorialTest extends BaseTest {
 		Thread.sleep(1000);
 
 		cityPage.tapTrainButton();
-		cityPage.setTrainUnitButton();
+		cityPage.setTrainUnitButtonPositionZero();
 
 		Thread.sleep(1000);
 
-		cityPage.tapTrainUnitButton();
+		cityPage.tapTrainUnitButtonPositionZero();
 		cityPage.setConfirmTrainUnitButton();
 
 		Thread.sleep(1000);
@@ -715,4 +499,248 @@ public class TutorialTest extends BaseTest {
 
 	}
 
+	@Test
+	public void test_16_openQuests() throws InterruptedException {
+		tutorialPage = new TutorialPage(driver);
+		cityPage = new CityPage(driver);
+
+		cityPage.setQuestButton();
+
+		Thread.sleep(1000);
+
+		cityPage.tapQuestButton();
+		cityPage.setCloseQuestButton();
+
+		Thread.sleep(1000);
+
+		cityPage.tapCloseQuestButton();
+
+		tutorialPage.setTutorialBanner();
+		tutorialPage.tapTutorialBanner();
+
+	}
+
+	@Test
+	public void test_17_getFreeHero() throws InterruptedException {
+		tutorialPage = new TutorialPage(driver);
+		cityPage = new CityPage(driver);
+
+		tutorialPage.setTutorialBanner();
+		tutorialPage.tapTutorialBanner();
+
+		cityPage.setAvatarButton();
+
+		Thread.sleep(1000);
+
+		cityPage.tapAvatarButton();
+
+		tutorialPage.setTutorialBanner();
+		tutorialPage.tapTutorialBanner();
+
+		cityPage.setHireHeroButtonPositionZero();
+
+		Thread.sleep(1000);
+
+		cityPage.tapHireHeroButtonPositionZero();
+
+		tutorialPage.setTutorialBanner();
+		tutorialPage.tapTutorialBanner();
+
+	}
+
+	@Test
+	public void test_18_armyFormation() throws InterruptedException {
+		tutorialPage = new TutorialPage(driver);
+		cityPage = new CityPage(driver);
+		worldMapPage = new WorldMapPage(driver);
+
+		cityPage.setTutorialBuilding();
+
+		Thread.sleep(1000);
+
+		cityPage.tapTutorialBuilding();
+		cityPage.setFormArmyButton();
+
+		Thread.sleep(1000);
+
+		cityPage.tapFormArmyButton();
+		cityPage.setCreateArmyButton();
+
+		Thread.sleep(1000);
+
+		cityPage.tapCreateArmyButton();
+		cityPage.setNextButtonEditArmyPopUp();
+
+		Thread.sleep(1000);
+
+		cityPage.tapNextButtonEditArmyPopUp();
+		cityPage.setNextButtonEditArmyPopUp();
+
+		Thread.sleep(1000);
+
+		cityPage.tapNextButtonEditArmyPopUp();
+		cityPage.setConfirmButtonEditArmyPopUp();
+
+		Thread.sleep(1000);
+
+		cityPage.tapConfirmButtonEditArmyPopUp();
+
+		tutorialPage.setTutorialBanner();
+		tutorialPage.tapTutorialBanner();
+		tutorialPage.setTutorialBanner();
+		tutorialPage.tapTutorialBanner();
+
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+	}
+
+	@Test
+	public void test_19_goToFirstCampfire() throws InterruptedException {
+		worldMapPage = new WorldMapPage(driver);
+
+		worldMapPage.setWorldMapButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapWorldMapButton();
+		worldMapPage.setCampFire();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapCampFire();
+		worldMapPage.setStartCampaignButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapStartCampaignButton();
+		worldMapPage.setSelectArmyInCampaignPopUpPositionZero();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapSelectArmyInCampaignPopUpPositionZero();
+		worldMapPage.setStartCampaignButtonInCampaignPopUp();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapStartCampaignButtonInCampaignPopUp();
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+
+	}
+
+	@Test
+	public void test_20_ExploreFirstCampfire() throws InterruptedException {
+		worldMapPage = new WorldMapPage(driver);
+		cityPage = new CityPage(driver);
+
+		cityPage.setChooseArmy();
+
+		Thread.sleep(1000);
+
+		cityPage.tapChooseArmy();
+		worldMapPage.setSearchCampfire();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapSearchCampfire();
+		worldMapPage.setExplorerButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapExplorerButton();
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+
+	}
+
+	@Test
+	public void test_21_goToSecondCampfire() throws InterruptedException {
+		worldMapPage = new WorldMapPage(driver);
+
+		worldMapPage.setWorldMapButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapWorldMapButton();
+		worldMapPage.setCampFire();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapCampFire();
+		worldMapPage.setStartCampaignButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapStartCampaignButton();
+		worldMapPage.setSelectArmyInCampaignPopUpPositionZero();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapSelectArmyInCampaignPopUpPositionZero();
+		worldMapPage.setStartCampaignButtonInCampaignPopUp();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapStartCampaignButtonInCampaignPopUp();
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+
+	}
+
+	@Test
+	public void test_22_ExploreSecondCampfire() throws InterruptedException {
+		worldMapPage = new WorldMapPage(driver);
+		cityPage = new CityPage(driver);
+
+		cityPage.setChooseArmy();
+
+		Thread.sleep(1000);
+
+		cityPage.tapChooseArmy();
+
+		worldMapPage.setSearchCampfire();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapSearchCampfire();
+		worldMapPage.setExplorerButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapExplorerButton();
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.setInspectButton();
+
+		Thread.sleep(1000);
+
+		worldMapPage.tapInspectButton();
+
+	}
 }

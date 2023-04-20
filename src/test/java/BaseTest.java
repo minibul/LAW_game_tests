@@ -34,6 +34,7 @@ import org.junit.Before;
 import pages.CityPage;
 import pages.LoginPage;
 import pages.TutorialPage;
+import pages.WorldMapPage;
 
 import java.io.IOException;
 
@@ -43,12 +44,12 @@ public class BaseTest {
 	protected LoginPage loginPage;
 	protected CityPage cityPage;
 	protected TutorialPage tutorialPage;
+	protected WorldMapPage worldMapPage;
 
 	@Before
 	public void setUp() throws IOException {
 		driver = new AltDriver();
-//		cityPage = new CityPage(driver);
-//		loginPage = new LoginPage(driver);
+
 	}
 
 	@After

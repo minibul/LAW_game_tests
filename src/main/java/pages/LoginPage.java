@@ -23,7 +23,6 @@ public class LoginPage extends BasePage {
 	private AltObject registerButton;
 	private AltObject logoutButton;
 	private AltObject confirmButton;
-	private AltObject finishBuildingIronMineInTutorial;
 
 	public LoginPage(AltDriver driver) {
 		super(driver);
