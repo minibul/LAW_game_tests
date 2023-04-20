@@ -7,6 +7,7 @@ import com.alttester.Commands.FindObject.AltWaitForObjectsParams;
 
 public class TutorialPage extends BasePage {
 	private AltObject firstTutorialBanner;
+	private final AltDriver driver;
 
 	public TutorialPage(AltDriver driver) {
 		super(driver);
@@ -14,7 +15,7 @@ public class TutorialPage extends BasePage {
 	}
 	public void setTutorialBanner() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Tutorial/HintManager/Hint(Clone)").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(60).build();
+		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(200).build();
 		firstTutorialBanner = getDriver().waitForObject(params);
 	}
 

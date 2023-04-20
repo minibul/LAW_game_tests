@@ -12,7 +12,7 @@ import static pages.LoginPage.getProperty;
 public class LoginInTest extends BaseTest {
 
 	@Test
-	public void test_1_SuccessfulLogInTest() throws InterruptedException {
+	public void test_01_SuccessfulLogInTest() throws InterruptedException {
 		String email = getProperty("email");
 		String password = getProperty("password");
 
@@ -31,7 +31,7 @@ public class LoginInTest extends BaseTest {
 		assertTrue(cityPage.isMailboxDisplayed());
 	}
 	@Test
-	public void test_2_SuccessfulLogOutTest() throws InterruptedException {
+	public void test_02_SuccessfulLogOutTest() throws InterruptedException {
 		cityPage.setSettingsButton();
 		cityPage.tapSettingsButton();
 		cityPage.setLogOutButton();
@@ -40,7 +40,7 @@ public class LoginInTest extends BaseTest {
 		assertTrue(loginPage.isEmailDisplayed());
 	}
 	@Test
-	public void test_3_unsuccessfulLogInNotRegisteredUserTest() {
+	public void test_03_unsuccessfulLogInNotRegisteredUserTest() {
 		String randomEmail = RandomDataGenerator.generateRandomEmail("example.com", 10);
 		String randomPassword = RandomDataGenerator.generateRandomPassword(8);
 
@@ -54,9 +54,8 @@ public class LoginInTest extends BaseTest {
 		assertFalse(loginPage.isEmailDisplayed());
 
 	}
-
 	@Test
-	public void test_4_cleanEmailPasswordInput() {
+	public void test_04_cleanEmailPasswordInput() {
 
 		loginPage.tapLoginWithEmailButton();
 		loginPage.enterEmailLoginTab("");
