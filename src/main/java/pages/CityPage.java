@@ -11,31 +11,25 @@ public class CityPage extends BasePage {
 	private AltObject settingsButton;
 	private AltObject logOutButton;
 	private AltObject chooseArmy;
-	private AltObject goToCastleLevel1;
 	private AltObject changeArmyRangeButton;
 	private AltObject changeArmyAggressionButton;
-	private AltObject castleLevel1;
 	private AltObject captureCastleButton;
 	private AltObject actionBar;
-	private AltObject tutorialBuilding;
 	private AltObject constructBuildingButton;
 	private AltObject constructUpgradeButtonInPopUp;
 	private AltObject buildingUpgradeFinishButton;
 	private AltObject buildButton;
-	private AltObject buildBuildingButtonFromTutorialPositionTwo;
 	private AltObject selectionButtonYes;
-	private AltObject finishBuildingIronMineInTutorial;
-	private AltObject finishBuildingStoreHouseInTutorial;
-	private AltObject finishBuildingFoodFarmInTutorial;
+	private AltObject finishBuildingIronMine;
+	private AltObject finishBuildingStoreHouse;
+	private AltObject finishBuildingFoodFarm;
 	private AltObject buildingUpgradeButton;
-	private AltObject finishUpdateCastleLvl1InTutorial;
-	private AltObject finishBuildingLivingHouseInTutorial;
-	private AltObject finishBuildingStablesInTutorial;
+	private AltObject finishUpdateCastleLvl1;
+	private AltObject finishBuildingLivingHouse;
+	private AltObject finishBuildingStables;
 	private AltObject trainButton;
 	private AltObject trainUnitButtonPositionZero;
 	private AltObject confirmTrainUnitButton;
-	private AltObject buildBuildingButtonFromTutorialPositionZero;
-	private AltObject buildBuildingButtonFromTutorialPositionThree;
 	private AltObject questButton;
 	private AltObject avatarButton;
 	private AltObject closeQuestButton;
@@ -72,11 +66,6 @@ public class CityPage extends BasePage {
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.chooseArmy = getDriver().waitForObject(params);
 	}
-	public void setGoToCastleLevel1() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//TutorialCircle(Clone)/../renderer").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
-		this.goToCastleLevel1 = getDriver().waitForObject(params);
-	}
 	public void setChangeArmyRangeButton() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Army Formation/Button - Change Army Range").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
@@ -87,11 +76,6 @@ public class CityPage extends BasePage {
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.changeArmyAggressionButton = getDriver().waitForObject(params);
 	}
-	public void setCastleLevel1() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//CityView/CityGrid/Environment/Building - CASTLE lvl 1").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
-		this.castleLevel1 = getDriver().waitForObject(params);
-	}
 	public void setCaptureCastleButton() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Selection Buttons/Target/Upper/SelectionButton\\[CAPTURE_CASTLE\\]").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
@@ -101,11 +85,6 @@ public class CityPage extends BasePage {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Activity Log/Group/Button - Resize").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.actionBar = getDriver().waitForObject(params);
-	}
-	public void setTutorialBuilding() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//TutorialCircle(Clone)/../Renderers").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
-		this.tutorialBuilding = getDriver().waitForObject(params);
 	}
 	public void setConstructBuildingButton() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Selection Buttons/Target/Lower/SelectionButton\\[BUILDING_RECONSTRUCT\\]").build();
@@ -127,61 +106,45 @@ public class CityPage extends BasePage {
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.buildButton = getDriver().waitForObject(params);
 	}
-	public void setBuildBuildingButtonFromTutorialPositionZero() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Popups/UI - Popup - Building - Construct(Clone)/Group/Content/Scroll View/Viewport/Content/UI_Prefab_BuildingConstruction0/Group/Bottom Container/UI Button -Build").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
-		this.buildBuildingButtonFromTutorialPositionZero = getDriver().waitForObject(params);
-	}
-	public void setBuildBuildingButtonFromTutorialPositionTwo() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Popups/UI - Popup - Building - Construct(Clone)/Group/Content/Scroll View/Viewport/Content/UI_Prefab_BuildingConstruction2/Group/Bottom Container/UI Button -Build").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
-		this.buildBuildingButtonFromTutorialPositionTwo = getDriver().waitForObject(params);
-	}
-	public void setBuildBuildingButtonFromTutorialPositionThree() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Popups/UI - Popup - Building - Construct(Clone)/Group/Content/Scroll View/Viewport/Content/UI_Prefab_BuildingConstruction3/Group/Bottom Container/UI Button -Build").build();
-		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
-		this.buildBuildingButtonFromTutorialPositionThree = getDriver().waitForObject(params);
-	}
-
 	public void setSelectionButtonYes() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "SelectionButton\\[BUILDING_BUILD_YES\\]").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.selectionButtonYes = getDriver().waitForObject(params);
 	}
-	public void setFinishBuildingIronMineInTutorial() {
+	public void setFinishBuildingIronMine() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "building_ironmine_000(Clone)").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
-		this.finishBuildingIronMineInTutorial = getDriver().waitForObject(params);
+		this.finishBuildingIronMine = getDriver().waitForObject(params);
 	}
-	public void setFinishBuildingStoreHouseInTutorial() {
+	public void setFinishBuildingStoreHouse() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "building_storehouse_001(Clone)").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
-		this.finishBuildingStoreHouseInTutorial = getDriver().waitForObject(params);
+		this.finishBuildingStoreHouse = getDriver().waitForObject(params);
 	}
-	public void setFinishBuildingFoodFarmInTutorial() {
+	public void setFinishBuildingFoodFarm() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "building_foodfarm_001_0(Clone)").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
-		this.finishBuildingFoodFarmInTutorial = getDriver().waitForObject(params);
+		this.finishBuildingFoodFarm = getDriver().waitForObject(params);
 	}
 	public void setBuildingUpgradeButton() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//Canvas/Safe Area/Content/Selection Buttons/Target/Lower/SelectionButton\\[BUILDING_UPGRADE\\]").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.buildingUpgradeButton = getDriver().waitForObject(params);
 	}
-	public void setFinishUpdateCastleLvl1InTutorial() {
+	public void setFinishUpdateCastleLvl1() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "Building - CASTLE lvl 1").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
-		this.finishUpdateCastleLvl1InTutorial = getDriver().waitForObject(params);
+		this.finishUpdateCastleLvl1 = getDriver().waitForObject(params);
 	}
-	public void setFinishBuildingLivingHouseInTutorial() {
+	public void setFinishBuildingLivingHouse() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "Building - LIVINGHOUSE lvl 0").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
-		this.finishBuildingLivingHouseInTutorial = getDriver().waitForObject(params);
+		this.finishBuildingLivingHouse = getDriver().waitForObject(params);
 	}
-	public void setFinishBuildingStablesInTutorial() {
+	public void setFinishBuildingStables() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "Building - STABLES lvl 0").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(10).build();
-		this.finishBuildingStablesInTutorial = getDriver().waitForObject(params);
+		this.finishBuildingStables = getDriver().waitForObject(params);
 	}
 	public void setTrainButton() {
 		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "SelectionButton\\[TRAINING\\]").build();
@@ -239,20 +202,15 @@ public class CityPage extends BasePage {
 		this.confirmButtonEditArmyPopUp = getDriver().waitForObject(params);
 	}
 
-
 	public void tapSettingsButton(){
 		settingsButton.tap();
 	}
 	public void tapChooseArmy(){
 		chooseArmy.tap();
 	}
-
 	public void tapLogOutButton() throws InterruptedException {
 		Thread.sleep(1000);
 		logOutButton.tap();
-	}
-	public void tapGoToCastleLevel1(){
-		goToCastleLevel1.tap();
 	}
 	public void tapChangeArmyRangeButton(){
 		changeArmyRangeButton.tap();
@@ -260,17 +218,11 @@ public class CityPage extends BasePage {
 	public void tapChangeArmyAggressionButton(){
 		changeArmyAggressionButton.tap();
 	}
-	public void tapCastleLevel1(){
-		castleLevel1.tap();
-	}
 	public void tapCaptureCastle(){
 		captureCastleButton.tap();
 	}
 	public void tapActionBar(){
 		actionBar.tap();
-	}
-	public void tapTutorialBuilding(){
-		tutorialBuilding.tap();
 	}
 	public void tapConstructBuildingButton(){
 		constructBuildingButton.tap();
@@ -284,35 +236,29 @@ public class CityPage extends BasePage {
 	public void tapBuildButton(){
 		buildButton.tap();
 	}
-	public void tapBuildBuildingButtonFromTutorialPositionTwo(){
-		buildBuildingButtonFromTutorialPositionTwo.tap();
-	}
-	public void tapBuildBuildingButtonFromTutorialPositionZero(){
-		buildBuildingButtonFromTutorialPositionZero.tap();
-	}
 	public void tapSelectionButtonYes(){
 		selectionButtonYes.tap();
 	}
-	public void tapFinishBuildingIronMineInTutorial(){
-		finishBuildingIronMineInTutorial.tap();
+	public void tapFinishBuildingIronMine(){
+		finishBuildingIronMine.tap();
 	}
-	public void tapFinishBuildingStoreHouseInTutorial(){
-		finishBuildingStoreHouseInTutorial.tap();
+	public void tapFinishBuildingStoreHouse(){
+		finishBuildingStoreHouse.tap();
 	}
-	public void tapFinishBuildingFoodFarmInTutorial(){
-		finishBuildingFoodFarmInTutorial.tap();
+	public void tapFinishBuildingFoodFarm(){
+		finishBuildingFoodFarm.tap();
 	}
 	public void tapBuildingUpgradeButton(){
 		buildingUpgradeButton.tap();
 	}
-	public void tapFinishUpdateCastleLvl1InTutorial(){
-		finishUpdateCastleLvl1InTutorial.tap();
+	public void tapFinishUpdateCastleLvl1(){
+		finishUpdateCastleLvl1.tap();
 	}
-	public void tapFinishBuildingLivingHouseInTutorial(){
-		finishBuildingLivingHouseInTutorial.tap();
+	public void tapFinishBuildingLivingHouse(){
+		finishBuildingLivingHouse.tap();
 	}
-	public void tapFinishBuildingStablesInTutorial(){
-		finishBuildingStablesInTutorial.tap();
+	public void tapFinishBuildingStables(){
+		finishBuildingStables.tap();
 	}
 	public void tapTrainButton(){
 		trainButton.tap();
@@ -322,9 +268,6 @@ public class CityPage extends BasePage {
 	}
 	public void tapConfirmTrainUnitButton(){
 		confirmTrainUnitButton.tap();
-	}
-	public void tapBuildBuildingButtonFromTutorialPositionThree(){
-		buildBuildingButtonFromTutorialPositionThree.tap();
 	}
 	public void tapQuestButton(){
 		questButton.tap();

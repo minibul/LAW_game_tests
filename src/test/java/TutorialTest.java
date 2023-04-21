@@ -7,6 +7,8 @@ import pages.LoginPage;
 import pages.TutorialPage;
 import pages.WorldMapPage;
 
+import static org.junit.Assert.assertTrue;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TutorialTest extends BaseTest {
 
@@ -70,11 +72,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage = new TutorialPage(driver);
 		cityPage = new CityPage(driver);
 
-		cityPage.setGoToCastleLevel1();
+		tutorialPage.setGoToCastleLevel1();
 
 		Thread.sleep(1000);
 
-		cityPage.tapGoToCastleLevel1();
+		tutorialPage.tapGoToCastleLevel1();
 
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
@@ -116,11 +118,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
 
-		cityPage.setCastleLevel1();
+		tutorialPage.setCastleLevel1();
 
 		Thread.sleep(3000);
 
-		cityPage.tapCastleLevel1();
+		tutorialPage.tapCastleLevel1();
 		cityPage.setCaptureCastleButton();
 
 		Thread.sleep(1000);
@@ -158,11 +160,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage = new TutorialPage(driver);
 		cityPage = new CityPage(driver);
 
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(5000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 
 		cityPage.setConstructBuildingButton();
 
@@ -178,11 +180,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
 
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(1000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -199,11 +201,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage = new TutorialPage(driver);
 		cityPage = new CityPage(driver);
 
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(5000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 		cityPage.setConstructBuildingButton();
 
 		Thread.sleep(1000);
@@ -214,11 +216,11 @@ public class TutorialTest extends BaseTest {
 		Thread.sleep(1000);
 
 		cityPage.tapConstructUpgradeButtonInPopUp();
-		cityPage.setFinishBuildingIronMineInTutorial();
+		cityPage.setFinishBuildingIronMine();
 
 		Thread.sleep(1000);
 
-		cityPage.tapFinishBuildingIronMineInTutorial();
+		cityPage.tapFinishBuildingIronMine();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -245,21 +247,21 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.tapBuildButton();
 
-		cityPage.setBuildBuildingButtonFromTutorialPositionTwo();
+		tutorialPage.setBuildBuildingButtonFromTutorialPositionTwo();
 
 		Thread.sleep(2000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionTwo();
+		tutorialPage.tapBuildBuildingButtonFromTutorialPositionTwo();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
 
 		cityPage.tapSelectionButtonYes();
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(1000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -285,22 +287,22 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.tapBuildButton();
 
-		cityPage.setBuildBuildingButtonFromTutorialPositionZero();
+		tutorialPage.setBuildBuildingButtonFromTutorialPositionZero();
 
 		Thread.sleep(2000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionZero();
+		tutorialPage.tapBuildBuildingButtonFromTutorialPositionZero();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
 
 		cityPage.tapSelectionButtonYes();
 
-		cityPage.setFinishBuildingStoreHouseInTutorial();
+		cityPage.setFinishBuildingStoreHouse();
 
 		Thread.sleep(1000);
 
-		cityPage.tapFinishBuildingStoreHouseInTutorial();
+		cityPage.tapFinishBuildingStoreHouse();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -325,21 +327,21 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.tapBuildButton();
 
-		cityPage.setBuildBuildingButtonFromTutorialPositionTwo();
+		tutorialPage.setBuildBuildingButtonFromTutorialPositionTwo();
 
 		Thread.sleep(2000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionTwo();
+		tutorialPage.tapBuildBuildingButtonFromTutorialPositionTwo();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
 
 		cityPage.tapSelectionButtonYes();
-		cityPage.setFinishBuildingFoodFarmInTutorial();
+		cityPage.setFinishBuildingFoodFarm();
 
 		Thread.sleep(1000);
 
-		cityPage.tapFinishBuildingFoodFarmInTutorial();
+		cityPage.tapFinishBuildingFoodFarm();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -358,11 +360,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage = new TutorialPage(driver);
 		cityPage = new CityPage(driver);
 
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(5000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 
 		cityPage.setBuildingUpgradeButton();
 
@@ -378,11 +380,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
 
-		cityPage.setFinishUpdateCastleLvl1InTutorial();
+		cityPage.setFinishUpdateCastleLvl1();
 
 		Thread.sleep(1000);
 
-		cityPage.tapFinishUpdateCastleLvl1InTutorial();
+		cityPage.tapFinishUpdateCastleLvl1();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -404,21 +406,21 @@ public class TutorialTest extends BaseTest {
 		Thread.sleep(1000);
 
 		cityPage.tapBuildButton();
-		cityPage.setBuildBuildingButtonFromTutorialPositionZero();
+		tutorialPage.setBuildBuildingButtonFromTutorialPositionZero();
 
 		Thread.sleep(2000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionZero();
+		tutorialPage.tapBuildBuildingButtonFromTutorialPositionZero();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
 
 		cityPage.tapSelectionButtonYes();
-		cityPage.setFinishBuildingLivingHouseInTutorial();
+		cityPage.setFinishBuildingLivingHouse();
 
 		Thread.sleep(1000);
 
-		cityPage.tapFinishBuildingLivingHouseInTutorial();
+		cityPage.tapFinishBuildingLivingHouse();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -441,21 +443,21 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.tapBuildButton();
 
-		cityPage.setBuildBuildingButtonFromTutorialPositionThree();
+		tutorialPage.setBuildBuildingButtonFromTutorialPositionThree();
 
 		Thread.sleep(5000);
 
-		cityPage.tapBuildBuildingButtonFromTutorialPositionThree();
+		tutorialPage.tapBuildBuildingButtonFromTutorialPositionThree();
 		cityPage.setSelectionButtonYes();
 
 		Thread.sleep(1000);
 
 		cityPage.tapSelectionButtonYes();
-		cityPage.setFinishBuildingStablesInTutorial();
+		cityPage.setFinishBuildingStables();
 
 		Thread.sleep(1000);
 
-		cityPage.tapFinishBuildingStablesInTutorial();
+		cityPage.tapFinishBuildingStables();
 		cityPage.setBuildingUpgradeFinishButton();
 
 		Thread.sleep(1000);
@@ -472,11 +474,11 @@ public class TutorialTest extends BaseTest {
 		tutorialPage = new TutorialPage(driver);
 		cityPage = new CityPage(driver);
 
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(5000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 
 		cityPage.setTrainButton();
 
@@ -554,11 +556,11 @@ public class TutorialTest extends BaseTest {
 		cityPage = new CityPage(driver);
 		worldMapPage = new WorldMapPage(driver);
 
-		cityPage.setTutorialBuilding();
+		tutorialPage.setTutorialBuilding();
 
 		Thread.sleep(1000);
 
-		cityPage.tapTutorialBuilding();
+		tutorialPage.tapTutorialBuilding();
 		cityPage.setFormArmyButton();
 
 		Thread.sleep(1000);
@@ -741,6 +743,23 @@ public class TutorialTest extends BaseTest {
 		Thread.sleep(1000);
 
 		worldMapPage.tapInspectButton();
+
+	}
+
+	@Test
+	public void test_23_LogOut() throws InterruptedException {
+		cityPage = new CityPage(driver);
+
+		cityPage.setSettingsButton();
+
+		Thread.sleep(1000);
+
+		cityPage.tapSettingsButton();
+		cityPage.setLogOutButton();
+		cityPage.tapLogOutButton();
+
+		loginPage = new LoginPage(driver);
+		assertTrue(loginPage.isEmailDisplayed());
 
 	}
 }
