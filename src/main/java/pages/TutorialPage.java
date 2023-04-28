@@ -30,7 +30,7 @@ public class TutorialPage extends BasePage {
 		this.goToCastleLevel1 = getDriver().waitForObject(params);
 	}
 	public void setCastleLevel1() {
-		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.PATH, "//CityView/CityGrid/Environment/Building - CASTLE lvl 1").build();
+		AltFindObjectsParams par = new AltFindObjectsParams.Builder(AltDriver.By.NAME, "Building - CASTLE lvl 1").build();
 		AltWaitForObjectsParams params = new AltWaitForObjectsParams.Builder(par).withTimeout(30).build();
 		this.castleLevel1 = getDriver().waitForObject(params);
 	}
