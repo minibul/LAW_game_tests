@@ -8,7 +8,6 @@ import com.alttester.Commands.InputActions.AltScrollParams;
 
 public class WorldMapPage extends BasePage {
 	private AltObject worldMapButton;
-
 	private final AltDriver driver;
 	private AltObject campFire;
 	private AltObject startCampaignButton;
@@ -92,7 +91,6 @@ public class WorldMapPage extends BasePage {
 	public void tapSearchCampfire(){
 		searchCampfire.tap();
 	}
-
 	public void tapExplorerButton() {
 		AltScrollParams scrollParams = new AltScrollParams.Builder().withSpeed(-3).withDuration(1).build();
 		scrollToElement(explorerButton, scrollParams);
