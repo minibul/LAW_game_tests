@@ -97,13 +97,6 @@ public class TutorialTest extends BaseTest {
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
 
-	}
-
-	@Test
-	public void test_05_castleCapture() throws InterruptedException {
-		tutorialPage = new TutorialPage(driver);
-		cityPage = new CityPage(driver);
-
 		cityPage.setChangeArmyAggressionButton();
 
 		Thread.sleep(1000);
@@ -115,8 +108,18 @@ public class TutorialTest extends BaseTest {
 
 		cityPage.tapChangeArmyRangeButton();
 
+	}
+
+	@Test
+	public void test_05_castleCapture() throws InterruptedException {
+		tutorialPage = new TutorialPage(driver);
+		cityPage = new CityPage(driver);
+
+
 		tutorialPage.setTutorialBanner();
 		tutorialPage.tapTutorialBanner();
+
+		Thread.sleep(3000);
 
 		tutorialPage.setCastleLevel1();
 
